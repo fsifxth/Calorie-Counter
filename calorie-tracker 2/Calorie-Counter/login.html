@@ -44,7 +44,25 @@
       </div>
     </div>
   </div>
-<!-- Add JS password/email/login validation + profile creation-->
+  <script>
+    function ValidateLogin() {
+      const email = document.getElementByID("email").value.trim();
+      const password = document.getElementByID("password").value.trim();
+      const errorEl = document.getElementByID("error-message");
+      errorEl.style.display = "none";
+      const emailpattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s']]+$/;
+      if (!emailPattern.test(email)) {
+        errorEL.textContent = "Please enter a valid email address.";
+        errorEl.style.display = "block";
+        return false;
+      }
+      if (pasword.length < 6) {
+        errorEl.textContent = "Password must be at least 6 characters long.";
+        errorEl.style.display = "block";
+        return false;
+      }
+      return true;
+    </script>      
 
 <script src="js/auth.js"></script>
 
