@@ -54,9 +54,9 @@
               e.preventDefault();
               const errorEl = document.getElementById("error-message");
               errorEl.style.display = "none";
-              const name = document.getElemenById("name").value.trim();
-              const email = document.getElemenById("email").value.trim();
-              const passoword = document.getElemenById("password").value.trim();
+              const name = document.getElementById("name").value.trim();
+              const email = document.getElementById("email").value.trim();
+              const passoword = document.getElementById("password").value.trim();
               if (!name) {
                 errorEl.textContent = "Please enter your full name.";
                 errorEl.style.Display = "block";
