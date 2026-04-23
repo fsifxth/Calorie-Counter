@@ -51,12 +51,12 @@
           const signupForm = document.getElementByID("signupForm");
           if (signupForm) {
             signupForm.addEventListener("submit", async (e) => {
-              e.prevetntDefault();
+              e.preventDefault();
               const errorEl = document.gerElementByID("error-message");
               errorEl.style.display = "none";
-              const name = document.gerElemenByID("name").value.trim();
-              const email = document.gerElemenByID("email").value.trim();
-              const passoword = document.gerElemenByID("password").value.trim();
+              const name = document.getElemenById("name").value.trim();
+              const email = document.getElemenById("email").value.trim();
+              const passoword = document.getElemenById("password").value.trim();
               if (!name) {
                 errorEl.textContent = "Please enter your full name.";
                 errorEl.style.Display = "block";
