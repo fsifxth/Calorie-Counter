@@ -52,7 +52,7 @@
           if (signupForm) {
             signupForm.addEventListener("submit", async (e) => {
               e.preventDefault();
-              const errorEl = document.gerElementByID("error-message");
+              const errorEl = document.getElementById("error-message");
               errorEl.style.display = "none";
               const name = document.getElemenById("name").value.trim();
               const email = document.getElemenById("email").value.trim();
