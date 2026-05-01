@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const cors = require("cors");
 const db      = require("./models/db");
 
 const authRoutes     = require("./routes/authRoutes");
@@ -12,6 +13,7 @@ const progressRoutes = require("./routes/progressRoutes");
 const { errorHandler, notFound } = require("./middleware/errorHandler");
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../Calorie-Counter")));
@@ -29,7 +31,9 @@ app.use("/diary",    diaryRoutes);
 app.use("/water",    waterRoutes);
 app.use("/weight",   weightRoutes);
 app.use("/progress", progressRoutes);
-app.use("/goals",    progressRoutes);
+
+const goalsRoutes = require("./routes/goalsRoutes");
+app.use("/goals",    goalsRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

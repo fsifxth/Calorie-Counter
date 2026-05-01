@@ -66,9 +66,31 @@
 
           <button type="submit" class="btn btn-primary btn-full">Continue to Dashboard</button>
         </form>
+        <p id="error" style="color:red;"></p>
       </div>
     </div>
   </div>
+  <script>
 
+    document.getElementById('profileForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const profile = {
+    age: document.getElementById('age').value,
+    gender: document.getElementById('gender').value,
+    height: document.getElementById('height').value,
+    weight: document.getElementById('weight').value,
+    activityLevel: document.getElementById('activityLevel').value
+  };
+
+  localStorage.setItem("profile", JSON.stringify(profile));
+
+  console.log("PROFILE SAVED:", profile);
+
+  window.location.href = "dashboard.html";
+});
+  </script>
+<script src="js/index.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
